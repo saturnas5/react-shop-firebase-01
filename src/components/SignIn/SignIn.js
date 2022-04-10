@@ -25,8 +25,10 @@ const SignIn = () => {
             <form onSubmit={handleSubmit}>
                 <FormInput handleChange={setEmail} name='email' type='text' value={email} label='email'/>
                 <FormInput name='password' type="password" value={password} handleChange={setPassword} label='password'/>
-                <Button type="submit" >Sign In</Button>
-                <Button onClick={() => googleSignin()} >Sign In With GOOGLE</Button>
+                <div className="buttons">
+                    <Button type="submit" >Sign In</Button>
+                    <Button className='google-sign-in'  onClick={() => googleSignin()} >Sign In With GOOGLE</Button>
+                </div>
             </form>
         </div>
     )

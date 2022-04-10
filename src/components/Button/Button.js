@@ -1,10 +1,10 @@
 import React from "react";
 import './Button.scss';
 
-const Button = ({children, ...rest}) => {
+const Button = ({children, className, ...rest}) => {
 
     return (
-        <button className='custom-button' {...rest}>
+        <button className={`custom-button ${className}`} {...rest}>
             {children}
         </button>
     )

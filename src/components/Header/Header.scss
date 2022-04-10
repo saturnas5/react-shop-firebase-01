@@ -24,11 +24,13 @@
       &:link, &:active {
         text-decoration: none;
         color: black;
+        cursor: pointer;
       }
 
       &:hover, &:visited {
         text-decoration: none;
         color: black;
+        cursor: pointer;
       }
     }
   }

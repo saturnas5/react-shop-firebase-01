@@ -1,7 +1,7 @@
-import React, {useReducer} from "react";
+import React, { useReducer } from "react";
 import createDataContext from "./createDataContext";
-import { signInWithGoogle } from "../../src/firebase/firebase.utils";
-import {GoogleAuthProvider} from 'firebase/auth';
+import { signInWithGoogle, auth } from "../../src/firebase/firebase.utils";
+import { GoogleAuthProvider, signOut } from 'firebase/auth';
 
 const authReducer = (state, action) => {
     switch (action.type) {
@@ -30,8 +30,13 @@ const googleSignin = dispatch => async () => {
 
 const signup = dispatch => () => {}
 
-const signout = dispatch => () => {
+const signout = dispatch => async () => {
     localStorage.removeItem('token')
+    try {
+        await signOut(auth);
+    } catch (err) {
+        console.log(err);
+    }
     dispatch({type: 'signout', payload: null})
 }
 
