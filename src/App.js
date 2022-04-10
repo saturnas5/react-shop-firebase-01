@@ -1,11 +1,22 @@
 import HomePage from "./page/homepage/HomePage";
 import './App.css'
+import {BrowserRouter, Switch, Route} from "react-router-dom";
 
 
-function App() {
+const App = () => {
   return (
-      <HomePage/>
+      <Switch>
+          <Route exact path='/'>
+            <HomePage/>
+          </Route>
+      </Switch>
   )
 }
 
-export default App;
+export default () => {
+  return (
+      <BrowserRouter>
+        <App/>
+      </BrowserRouter>
+  );
+};
