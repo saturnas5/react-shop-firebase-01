@@ -1,11 +1,17 @@
+import React, {useState, useEffect, useContext} from "react";
 import HomePage from "./page/HomePage/HomePage";
 import './App.css'
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import ShopPage from "./page/ShopPage/ShopPage";
 import Header from "./components/Header/Header";
+import SignInSignUp from "./page/SignInSignUp/SignInSignUp";
+import { auth } from "./firebase/firebase.utils";
+import {Provider as AuthProvider} from "../src/context/AuthContext";
 
 
 const App = () => {
+    const [token, setToken] = useState(null);
+
   return (
       <>
       <Header/>
@@ -16,6 +22,9 @@ const App = () => {
           <Route path='/shop'>
               <ShopPage/>
           </Route>
+          <Route path='/signin'>
+              <SignInSignUp/>
+          </Route>
       </Switch>
       </>
   )
@@ -24,7 +33,9 @@ const App = () => {
 export default () => {
   return (
       <BrowserRouter>
-        <App/>
+          <AuthProvider>
+            <App/>
+          </AuthProvider>
       </BrowserRouter>
   );
 };
