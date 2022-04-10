@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Animated Infinite Cube</title>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work rdf:About="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:title>Animated Rotating 3D object</dc:title>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Jarda</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/"/>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>3D</rdf:li>
+            <rdf:li>animated</rdf:li>
+            <rdf:li>cube</rdf:li>
+            <rdf:li>infinite</rdf:li>
+            <rdf:li>object</rdf:li>
+            <rdf:li>rotating</rdf:li>
+            <rdf:li>volumetric</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:description>Animated Rotating 3D object</dc:description>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs id="animation_styles">
+    <style type="text/css">
+      @keyframes rotate360 {
+        from { transform: rotate(360deg); }
+        to   { transform: rotate(0deg); }
+      }
+      @-moz-keyframes rotate360 {
+        from { -moz-transform: rotate(360deg); }
+        to   { -moz-transform: rotate(0deg); }
+      }
+      @-webkit-keyframes rotate360 {
+        from { -webkit-transform: rotate(360deg); }
+        to   { -webkit-transform: rotate(0deg); }
+      }
+
+      .animateHeading {
+         animation: rotate360 20s linear infinite;
+        -moz-animation: rotate360 20s linear infinite;
+        -webkit-animation: rotate360 20s linear infinite;
+      }
+
+      @keyframes wave {
+        0% { transform: rotate(-4deg); }
+       50% { transform: rotate(4deg); }
+      100% { transform: rotate(-4deg); }
+      }
+      @-moz-keyframes wave {
+        0% { -moz-transform: rotate(-4deg); }
+       50% { -moz-transform: rotate(4deg); }
+      100% { -moz-transform: rotate(-4deg); }
+      }
+      @-webkit-keyframes wave {
+        0% { -webkit-transform: rotate(-4deg); }
+       50% { -webkit-transform: rotate(4deg); }
+      100% { -webkit-transform: rotate(-4deg); }
+      }
+
+      .animateWave {
+         animation: wave 2s ease-in-out infinite;
+        -moz-animation: wave 2s ease-in-out infinite;
+        -webkit-animation: wave 2s ease-in-out infinite;
+      }
+
+      .object3D { stroke: #606060; fill: #E0E0E0; stroke-width: 1 }
+
+      #wave1 {
+        animation-delay: -0s;
+        -moz-animation-delay: -0s;
+        -webkit-animation-delay: -0s;
+      }
+      #wave2 {
+        animation-delay: -0.0666667s;
+        -moz-animation-delay: -0.0666667s;
+        -webkit-animation-delay: -0.0666667s;
+      }
+      #wave3 {
+        animation-delay: -0.133333s;
+        -moz-animation-delay: -0.133333s;
+        -webkit-animation-delay: -0.133333s;
+      }
+      #wave4 {
+        animation-delay: -0.2s;
+        -moz-animation-delay: -0.2s;
+        -webkit-animation-delay: -0.2s;
+      }
+      #wave5 {
+        animation-delay: -0.266667s;
+        -moz-animation-delay: -0.266667s;
+        -webkit-animation-delay: -0.266667s;
+      }
+      #wave6 {
+        animation-delay: -0.333333s;
+        -moz-animation-delay: -0.333333s;
+        -webkit-animation-delay: -0.333333s;
+      }
+      #wave7 {
+        animation-delay: -0.4s;
+        -moz-animation-delay: -0.4s;
+        -webkit-animation-delay: -0.4s;
+      }
+      #wave8 {
+        animation-delay: -0.466667s;
+        -moz-animation-delay: -0.466667s;
+        -webkit-animation-delay: -0.466667s;
+      }
+      #wave9 {
+        animation-delay: -0.533333s;
+        -moz-animation-delay: -0.533333s;
+        -webkit-animation-delay: -0.533333s;
+      }
+      #wave10 {
+        animation-delay: -0.6s;
+        -moz-animation-delay: -0.6s;
+        -webkit-animation-delay: -0.6s;
+      }
+      #wave11 {
+        animation-delay: -0.666667s;
+        -moz-animation-delay: -0.666667s;
+        -webkit-animation-delay: -0.666667s;
+      }
+      #wave12 {
+        animation-delay: -0.733333s;
+        -moz-animation-delay: -0.733333s;
+        -webkit-animation-delay: -0.733333s;
+      }
+      #wave13 {
+        animation-delay: -0.8s;
+        -moz-animation-delay: -0.8s;
+        -webkit-animation-delay: -0.8s;
+      }
+      #wave14 {
+        animation-delay: -0.866667s;
+        -moz-animation-delay: -0.866667s;
+        -webkit-animation-delay: -0.866667s;
+      }
+      #wave15 {
+        animation-delay: -0.933333s;
+        -moz-animation-delay: -0.933333s;
+        -webkit-animation-delay: -0.933333s;
+      }
+      #wave16 {
+        animation-delay: -1s;
+        -moz-animation-delay: -1s;
+        -webkit-animation-delay: -1s;
+      }
+      #wave17 {
+        animation-delay: -1.06667s;
+        -moz-animation-delay: -1.06667s;
+        -webkit-animation-delay: -1.06667s;
+      }
+      #wave18 {
+        animation-delay: -1.13333s;
+        -moz-animation-delay: -1.13333s;
+        -webkit-animation-delay: -1.13333s;
+      }
+      #wave19 {
+        animation-delay: -1.2s;
+        -moz-animation-delay: -1.2s;
+        -webkit-animation-delay: -1.2s;
+      }
+      #wave20 {
+        animation-delay: -1.26667s;
+        -moz-animation-delay: -1.26667s;
+        -webkit-animation-delay: -1.26667s;
+      }
+      #wave21 {
+        animation-delay: -1.33333s;
+        -moz-animation-delay: -1.33333s;
+        -webkit-animation-delay: -1.33333s;
+      }
+      #wave22 {
+        animation-delay: -1.4s;
+        -moz-animation-delay: -1.4s;
+        -webkit-animation-delay: -1.4s;
+      }
+      #wave23 {
+        animation-delay: -1.46667s;
+        -moz-animation-delay: -1.46667s;
+        -webkit-animation-delay: -1.46667s;
+      }
+      #wave24 {
+        animation-delay: -1.53333s;
+        -moz-animation-delay: -1.53333s;
+        -webkit-animation-delay: -1.53333s;
+      }
+      #wave25 {
+        animation-delay: -1.6s;
+        -moz-animation-delay: -1.6s;
+        -webkit-animation-delay: -1.6s;
+      }
+      #wave26 {
+        animation-delay: -1.66667s;
+        -moz-animation-delay: -1.66667s;
+        -webkit-animation-delay: -1.66667s;
+      }
+      #wave27 {
+        animation-delay: -1.73333s;
+        -moz-animation-delay: -1.73333s;
+        -webkit-animation-delay: -1.73333s;
+      }
+      #wave28 {
+        animation-delay: -1.8s;
+        -moz-animation-delay: -1.8s;
+        -webkit-animation-delay: -1.8s;
+      }
+      #wave29 {
+        animation-delay: -1.86667s;
+        -moz-animation-delay: -1.86667s;
+        -webkit-animation-delay: -1.86667s;
+      }
+      #wave30 {
+        animation-delay: -1.93333s;
+        -moz-animation-delay: -1.93333s;
+        -webkit-animation-delay: -1.93333s;
+      }
+      #wave31 {
+        animation-delay: -2s;
+        -moz-animation-delay: -2s;
+        -webkit-animation-delay: -2s;
+      }
+      #wave32 {
+        animation-delay: -2.06667s;
+        -moz-animation-delay: -2.06667s;
+        -webkit-animation-delay: -2.06667s;
+      }
+      #wave33 {
+        animation-delay: -2.13333s;
+        -moz-animation-delay: -2.13333s;
+        -webkit-animation-delay: -2.13333s;
+      }
+      #wave34 {
+        animation-delay: -2.2s;
+        -moz-animation-delay: -2.2s;
+        -webkit-animation-delay: -2.2s;
+      }
+      #wave35 {
+        animation-delay: -2.26667s;
+        -moz-animation-delay: -2.26667s;
+        -webkit-animation-delay: -2.26667s;
+      }
+      #wave36 {
+        animation-delay: -2.33333s;
+        -moz-animation-delay: -2.33333s;
+        -webkit-animation-delay: -2.33333s;
+      }
+      #wave37 {
+        animation-delay: -2.4s;
+        -moz-animation-delay: -2.4s;
+        -webkit-animation-delay: -2.4s;
+      }
+      #wave38 {
+        animation-delay: -2.46667s;
+        -moz-animation-delay: -2.46667s;
+        -webkit-animation-delay: -2.46667s;
+      }
+      #wave39 {
+        animation-delay: -2.53333s;
+        -moz-animation-delay: -2.53333s;
+        -webkit-animation-delay: -2.53333s;
+      }
+      #wave40 {
+        animation-delay: -2.6s;
+        -moz-animation-delay: -2.6s;
+        -webkit-animation-delay: -2.6s;
+      }
+      #wave41 {
+        animation-delay: -2.66667s;
+        -moz-animation-delay: -2.66667s;
+        -webkit-animation-delay: -2.66667s;
+      }
+      #wave42 {
+        animation-delay: -2.73333s;
+        -moz-animation-delay: -2.73333s;
+        -webkit-animation-delay: -2.73333s;
+      }
+      #wave43 {
+        animation-delay: -2.8s;
+        -moz-animation-delay: -2.8s;
+        -webkit-animation-delay: -2.8s;
+      }
+      #wave44 {
+        animation-delay: -2.86667s;
+        -moz-animation-delay: -2.86667s;
+        -webkit-animation-delay: -2.86667s;
+      }
+      #wave45 {
+        animation-delay: -2.93333s;
+        -moz-animation-delay: -2.93333s;
+        -webkit-animation-delay: -2.93333s;
+      }
+      #wave46 {
+        animation-delay: -3s;
+        -moz-animation-delay: -3s;
+        -webkit-animation-delay: -3s;
+      }
+      #wave47 {
+        animation-delay: -3.06667s;
+        -moz-animation-delay: -3.06667s;
+        -webkit-animation-delay: -3.06667s;
+      }
+      #wave48 {
+        animation-delay: -3.13333s;
+        -moz-animation-delay: -3.13333s;
+        -webkit-animation-delay: -3.13333s;
+      }
+      #wave49 {
+        animation-delay: -3.2s;
+        -moz-animation-delay: -3.2s;
+        -webkit-animation-delay: -3.2s;
+      }
+      #wave50 {
+        animation-delay: -3.26667s;
+        -moz-animation-delay: -3.26667s;
+        -webkit-animation-delay: -3.26667s;
+      }
+      #wave51 {
+        animation-delay: -3.33333s;
+        -moz-animation-delay: -3.33333s;
+        -webkit-animation-delay: -3.33333s;
+      }
+      #wave52 {
+        animation-delay: -3.4s;
+        -moz-animation-delay: -3.4s;
+        -webkit-animation-delay: -3.4s;
+      }
+      #wave53 {
+        animation-delay: -3.46667s;
+        -moz-animation-delay: -3.46667s;
+        -webkit-animation-delay: -3.46667s;
+      }
+      #wave54 {
+        animation-delay: -3.53333s;
+        -moz-animation-delay: -3.53333s;
+        -webkit-animation-delay: -3.53333s;
+      }
+      #wave55 {
+        animation-delay: -3.6s;
+        -moz-animation-delay: -3.6s;
+        -webkit-animation-delay: -3.6s;
+      }
+      #wave56 {
+        animation-delay: -3.66667s;
+        -moz-animation-delay: -3.66667s;
+        -webkit-animation-delay: -3.66667s;
+      }
+      #wave57 {
+        animation-delay: -3.73333s;
+        -moz-animation-delay: -3.73333s;
+        -webkit-animation-delay: -3.73333s;
+      }
+      #wave58 {
+        animation-delay: -3.8s;
+        -moz-animation-delay: -3.8s;
+        -webkit-animation-delay: -3.8s;
+      }
+      #wave59 {
+        animation-delay: -3.86667s;
+        -moz-animation-delay: -3.86667s;
+        -webkit-animation-delay: -3.86667s;
+      }
+      #wave60 {
+        animation-delay: -3.93333s;
+        -moz-animation-delay: -3.93333s;
+        -webkit-animation-delay: -3.93333s;
+      }
+
+    </style>
+  </defs>
+  <defs id="slices">
+    <path id="slice1" d="M18,18H-36V-27H-45V27H27V-45H-27V-36H18V18Z" transform="rotate (225)"/>
+    <path id="slice2" d="M-18,-45H-27V-36H-18V-45M-36,-27H-45V-18H-36V-27Z" transform="rotate (225)"/>
+    <path id="slice3" d="M-18,-45H-27V-36H-18V-45M-36,-27H-45V-18H-36V-27M45,-45H36V27H45V-45M27,36H-45V45H27V36Z" transform="rotate (225)"/>
+    <path id="slice4" d="M-18,-45H-27V-36H-18V-45M-36,-27H-45V-18H-36V-27M45,18H36V27H45V18M27,36H18V45H27V36M45,-45H36V-36H45V-45M-36,36H-45V45H-36V36Z" transform="rotate (225)"/>
+    <path id="slice5" d="M18,45H27V36H18V45M36,27H45V18H36V27M-45,-18H-36V-27H-45V-18M-27,-36H-18V-45H-27V-36M-45,45H-36V36H-45V45M36,-36H45V-45H36V-36Z" transform="rotate (225)"/>
+    <path id="slice6" d="M18,45H27V36H18V45M36,27H45V18H36V27M-45,45H-36V-27H-45V45M-27,-36H45V-45H-27V-36Z" transform="rotate (225)"/>
+    <path id="slice7" d="M18,45H27V36H18V45M36,27H45V18H36V27Z" transform="rotate (225)"/>
+    <path id="slice8" d="M-18,-18H36V27H45V-27H-27V45H27V36H-18V-18Z" transform="rotate (225)"/>
+  </defs>
+  <g id="object3D">
+    <g class="object3D" transform="translate (100 100) scale (1 0.573576)">
+      <g id="layer1" transform="translate (0 63.1955)">
+        <g id="wave1" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice1"/>
+        </g>
+      </g>
+      <g id="layer2" transform="translate (0 61.0533)">
+        <g id="wave2" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice1"/>
+        </g>
+      </g>
+      <g id="layer3" transform="translate (0 58.9111)">
+        <g id="wave3" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice1"/>
+        </g>
+      </g>
+      <g id="layer4" transform="translate (0 56.7689)">
+        <g id="wave4" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice1"/>
+        </g>
+      </g>
+      <g id="layer5" transform="translate (0 54.6267)">
+        <g id="wave5" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice1"/>
+        </g>
+      </g>
+      <g id="layer6" transform="translate (0 52.4844)">
+        <g id="wave6" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice1"/>
+        </g>
+      </g>
+      <g id="layer7" transform="translate (0 50.3422)">
+        <g id="wave7" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice2"/>
+        </g>
+      </g>
+      <g id="layer8" transform="translate (0 48.2)">
+        <g id="wave8" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice2"/>
+        </g>
+      </g>
+      <g id="layer9" transform="translate (0 46.0578)">
+        <g id="wave9" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice2"/>
+        </g>
+      </g>
+      <g id="layer10" transform="translate (0 43.9156)">
+        <g id="wave10" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice2"/>
+        </g>
+      </g>
+      <g id="layer11" transform="translate (0 41.7733)">
+        <g id="wave11" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice2"/>
+        </g>
+      </g>
+      <g id="layer12" transform="translate (0 39.6311)">
+        <g id="wave12" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice2"/>
+        </g>
+      </g>
+      <g id="layer13" transform="translate (0 37.4889)">
+        <g id="wave13" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice3"/>
+        </g>
+      </g>
+      <g id="layer14" transform="translate (0 35.3467)">
+        <g id="wave14" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice3"/>
+        </g>
+      </g>
+      <g id="layer15" transform="translate (0 33.2044)">
+        <g id="wave15" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice3"/>
+        </g>
+      </g>
+      <g id="layer16" transform="translate (0 31.0622)">
+        <g id="wave16" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice3"/>
+        </g>
+      </g>
+      <g id="layer17" transform="translate (0 28.92)">
+        <g id="wave17" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice3"/>
+        </g>
+      </g>
+      <g id="layer18" transform="translate (0 26.7778)">
+        <g id="wave18" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice3"/>
+        </g>
+      </g>
+      <g id="layer19" transform="translate (0 24.6356)">
+        <g id="wave19" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice4"/>
+        </g>
+      </g>
+      <g id="layer20" transform="translate (0 22.4933)">
+        <g id="wave20" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice4"/>
+        </g>
+      </g>
+      <g id="layer21" transform="translate (0 20.3511)">
+        <g id="wave21" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice4"/>
+        </g>
+      </g>
+      <g id="layer22" transform="translate (0 18.2089)">
+        <g id="wave22" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice4"/>
+        </g>
+      </g>
+      <g id="layer23" transform="translate (0 16.0667)">
+        <g id="wave23" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice4"/>
+        </g>
+      </g>
+      <g id="layer24" transform="translate (0 13.9244)">
+        <g id="wave24" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice4"/>
+        </g>
+      </g>
+      <g id="layer25" transform="translate (0 11.7822)">
+        <g id="wave25" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice4"/>
+        </g>
+      </g>
+      <g id="layer26" transform="translate (0 9.64)">
+        <g id="wave26" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice4"/>
+        </g>
+      </g>
+      <g id="layer27" transform="translate (0 7.49778)">
+        <g id="wave27" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice4"/>
+        </g>
+      </g>
+      <g id="layer28" transform="translate (0 5.35556)">
+        <g id="wave28" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice4"/>
+        </g>
+      </g>
+      <g id="layer29" transform="translate (0 3.21333)">
+        <g id="wave29" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice4"/>
+        </g>
+      </g>
+      <g id="layer30" transform="translate (0 1.07111)">
+        <g id="wave30" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice4"/>
+        </g>
+      </g>
+      <g id="layer31" transform="translate (0 -1.07111)">
+        <g id="wave31" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice5"/>
+        </g>
+      </g>
+      <g id="layer32" transform="translate (0 -3.21333)">
+        <g id="wave32" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice5"/>
+        </g>
+      </g>
+      <g id="layer33" transform="translate (0 -5.35556)">
+        <g id="wave33" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice5"/>
+        </g>
+      </g>
+      <g id="layer34" transform="translate (0 -7.49778)">
+        <g id="wave34" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice5"/>
+        </g>
+      </g>
+      <g id="layer35" transform="translate (0 -9.64)">
+        <g id="wave35" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice5"/>
+        </g>
+      </g>
+      <g id="layer36" transform="translate (0 -11.7822)">
+        <g id="wave36" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice5"/>
+        </g>
+      </g>
+      <g id="layer37" transform="translate (0 -13.9244)">
+        <g id="wave37" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice5"/>
+        </g>
+      </g>
+      <g id="layer38" transform="translate (0 -16.0667)">
+        <g id="wave38" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice5"/>
+        </g>
+      </g>
+      <g id="layer39" transform="translate (0 -18.2089)">
+        <g id="wave39" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice5"/>
+        </g>
+      </g>
+      <g id="layer40" transform="translate (0 -20.3511)">
+        <g id="wave40" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice5"/>
+        </g>
+      </g>
+      <g id="layer41" transform="translate (0 -22.4933)">
+        <g id="wave41" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice5"/>
+        </g>
+      </g>
+      <g id="layer42" transform="translate (0 -24.6356)">
+        <g id="wave42" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice5"/>
+        </g>
+      </g>
+      <g id="layer43" transform="translate (0 -26.7778)">
+        <g id="wave43" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice6"/>
+        </g>
+      </g>
+      <g id="layer44" transform="translate (0 -28.92)">
+        <g id="wave44" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice6"/>
+        </g>
+      </g>
+      <g id="layer45" transform="translate (0 -31.0622)">
+        <g id="wave45" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice6"/>
+        </g>
+      </g>
+      <g id="layer46" transform="translate (0 -33.2044)">
+        <g id="wave46" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice6"/>
+        </g>
+      </g>
+      <g id="layer47" transform="translate (0 -35.3467)">
+        <g id="wave47" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice6"/>
+        </g>
+      </g>
+      <g id="layer48" transform="translate (0 -37.4889)">
+        <g id="wave48" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice6"/>
+        </g>
+      </g>
+      <g id="layer49" transform="translate (0 -39.6311)">
+        <g id="wave49" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice7"/>
+        </g>
+      </g>
+      <g id="layer50" transform="translate (0 -41.7733)">
+        <g id="wave50" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice7"/>
+        </g>
+      </g>
+      <g id="layer51" transform="translate (0 -43.9156)">
+        <g id="wave51" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice7"/>
+        </g>
+      </g>
+      <g id="layer52" transform="translate (0 -46.0578)">
+        <g id="wave52" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice7"/>
+        </g>
+      </g>
+      <g id="layer53" transform="translate (0 -48.2)">
+        <g id="wave53" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice7"/>
+        </g>
+      </g>
+      <g id="layer54" transform="translate (0 -50.3422)">
+        <g id="wave54" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice7"/>
+        </g>
+      </g>
+      <g id="layer55" transform="translate (0 -52.4844)">
+        <g id="wave55" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice8"/>
+        </g>
+      </g>
+      <g id="layer56" transform="translate (0 -54.6267)">
+        <g id="wave56" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice8"/>
+        </g>
+      </g>
+      <g id="layer57" transform="translate (0 -56.7689)">
+        <g id="wave57" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice8"/>
+        </g>
+      </g>
+      <g id="layer58" transform="translate (0 -58.9111)">
+        <g id="wave58" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice8"/>
+        </g>
+      </g>
+      <g id="layer59" transform="translate (0 -61.0533)">
+        <g id="wave59" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice8"/>
+        </g>
+      </g>
+      <g id="layer60" transform="translate (0 -63.1955)">
+        <g id="wave60" class="animateWave">
+          <use class="animateHeading" xlink:href="#slice8"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
