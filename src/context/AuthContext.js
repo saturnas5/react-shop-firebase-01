@@ -1,13 +1,15 @@
 import React, { useReducer } from "react";
 import createDataContext from "./createDataContext";
 import { signInWithGoogle, auth } from "../../src/firebase/firebase.utils";
-import { GoogleAuthProvider, signOut } from 'firebase/auth';
+import { GoogleAuthProvider, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import {firestore} from "../../src/firebase/firebase.utils";
+import {setDoc, doc, getDoc} from 'firebase/firestore';
 
 const authReducer = (state, action) => {
     switch (action.type) {
         case 'signin':
             return {token: action.payload, errorMessage: '', user: action};
-        case 'set_google_user':
+        case 'set_uid':
             return {...state, user: action.payload};
         case 'signout':
             return {...state, token: action.payload};
@@ -17,14 +19,43 @@ const authReducer = (state, action) => {
 }
 
 const localSign = dispatch => () => {}
-const signin = dispatch => () => {}
+
+const signin = dispatch => async (email, password) => {
+    signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            const user = userCredential.user
+            const token = user.accessToken;
+            localStorage.setItem('token', token);
+            localStorage.setItem('uid', user.uid);
+            dispatch({type: 'signin', payload: token});
+            dispatch({type: 'set_uid', payload: user.uid});
+            console.log(user);
+        })
+        .catch((error) => {
+            console.log(error.message);
+        })
+}
 
 const googleSignin = dispatch => async () => {
     const result = await signInWithGoogle();
     const credential = await GoogleAuthProvider.credentialFromResult(result);
     const token = credential.accessToken;
+
+    const docRef = doc(firestore, 'users', result.user.uid);
+    const docSnap = await getDoc(docRef);
+
+    if (!docSnap.exists()) {
+            await setDoc(doc(firestore, 'users', result.user.uid), {
+            firstName: result.user.displayName,
+            lastName: '',
+            email: result.user.email,
+            phone: result.user.phoneNumber,
+            uid: result.user.uid,
+            created: new Date(),
+        });
+    }
+
     dispatch({type: 'signin', payload: token});
-    dispatch({type: 'set_google_user', payload: result.user});
     localStorage.setItem('token', token);
 };
 

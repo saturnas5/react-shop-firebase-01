@@ -11,10 +11,12 @@ import {Provider as AuthProvider} from "../src/context/AuthContext";
 
 const App = () => {
     const [token, setToken] = useState(null);
+    const [uid, setUid] = useState(null);
 
     useEffect(() => {
         const token = localStorage.getItem('token')
-        console.log(token)
+        const uid = localStorage.getItem('uid')
+        console.log(uid)
     }, [])
 
   return (

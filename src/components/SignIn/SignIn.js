@@ -3,10 +3,12 @@ import './SignIn.scss';
 import FormInput from "../FormInput/Forminput";
 import Button from "../Button/Button";
 import {Context as AuthContext} from "../../context/AuthContext";
+import { doc, getDocs, collection, query, where, getDoc, setDoc} from 'firebase/firestore';
+import {firestore} from "../../firebase/firebase.utils";
 
 
 const SignIn = () => {
-    const {googleSignin} = useContext(AuthContext);
+    const {googleSignin, signin} = useContext(AuthContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -26,8 +28,15 @@ const SignIn = () => {
                 <FormInput handleChange={setEmail} name='email' type='text' value={email} label='email'/>
                 <FormInput name='password' type="password" value={password} handleChange={setPassword} label='password'/>
                 <div className="buttons">
-                    <Button type="submit" >Sign In</Button>
+                    <Button type="submit" onClick={() => signin(email, password)} >Sign In</Button>
                     <Button className='google-sign-in'  onClick={() => googleSignin()} >Sign In With GOOGLE</Button>
+                    <button onClick={async () => {
+                        await setDoc(doc(firestore, 'users', 'khgjgjg' ), {
+                            name: 'New Added',
+                            lastName: 'topas',
+                            age: 26
+                        })
+                    }}>fetch</button>
                 </div>
             </form>
         </div>
