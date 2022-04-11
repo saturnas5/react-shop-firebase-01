@@ -64,7 +64,7 @@ const googleSignin = dispatch => async () => {
 const signup = dispatch => async (firstName, email, password) => {
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            const user = userCredential.user
+            const user = userCredential.user;
             setDoc(doc(firestore, 'users', user.uid), {
                 firstName: firstName,
                 lastName: '',
@@ -73,6 +73,10 @@ const signup = dispatch => async (firstName, email, password) => {
                 id: user.uid,
                 created: new Date(),
             })
+            localStorage.setItem('token', user.accessToken);
+            localStorage.setItem('uid', user.uid);
+            dispatch({type: 'signin', payload: user.accessToken});
+            dispatch({type: 'set_uid', payload: user.uid});
         })
         .catch(error => {
             console.log(error.message)
