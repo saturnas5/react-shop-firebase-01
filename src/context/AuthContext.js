@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import createDataContext from "./createDataContext";
 import { signInWithGoogle, auth } from "../../src/firebase/firebase.utils";
-import { GoogleAuthProvider, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import {firestore} from "../../src/firebase/firebase.utils";
 import {setDoc, doc, getDoc} from 'firebase/firestore';
 
@@ -13,6 +13,8 @@ const authReducer = (state, action) => {
             return {...state, user: action.payload};
         case 'signout':
             return {...state, token: action.payload};
+        case 'error':
+            return {...state, errorMessage: action.payload}
         default:
             return state;
     }
@@ -50,7 +52,7 @@ const googleSignin = dispatch => async () => {
             lastName: '',
             email: result.user.email,
             phone: result.user.phoneNumber,
-            uid: result.user.uid,
+            id: result.user.uid,
             created: new Date(),
         });
     }
@@ -59,7 +61,32 @@ const googleSignin = dispatch => async () => {
     localStorage.setItem('token', token);
 };
 
-const signup = dispatch => () => {}
+const signup = dispatch => async (firstName, email, password) => {
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            const user = userCredential.user
+            setDoc(doc(firestore, 'users', user.uid), {
+                firstName: firstName,
+                lastName: '',
+                email: email,
+                phone: '',
+                id: user.uid,
+                created: new Date(),
+            })
+        })
+        .catch(error => {
+            console.log(error.message)
+            if (error.message === 'Firebase: Password should be at least 6 characters (auth/weak-password).') {
+                dispatch({type: 'error', payload: 'Password should be at least 6 characters.'});
+            } else if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
+                dispatch({type: 'error', payload: 'Already taken or bad Email address'});
+            } else if (error.message === 'Firebase: Error (auth/invalid-email).') {
+                dispatch({type: 'error', payload: 'Already taken or bad Email address'});
+            } else {
+                dispatch({type: 'error', payload: 'Somthing went wrong'});
+            }
+        });
+}
 
 const signout = dispatch => async () => {
     localStorage.removeItem('token')
@@ -77,5 +104,5 @@ const clearErrorMsg = dispatch => () => {}
 export const {Provider, Context} = createDataContext(
     authReducer,
     {localSign, signin, signout, signup, clearErrorMsg, googleSignin},
-    {token: null, errorMessage: '', user: null}
+    {token: null, errorMessage: '', user: null,}
 );

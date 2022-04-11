@@ -6,6 +6,7 @@ import {Context as AuthContext} from "../../context/AuthContext";
 import { doc, getDocs, collection, query, where, getDoc, setDoc} from 'firebase/firestore';
 import {firestore} from "../../firebase/firebase.utils";
 
+import { verifyPasswordResetCode, confirmPasswordReset } from "firebase/auth";
 
 const SignIn = () => {
     const {googleSignin, signin} = useContext(AuthContext);
@@ -16,8 +17,8 @@ const SignIn = () => {
         e.preventDefault();
         setEmail('');
         setPassword('');
+    };
 
-    }
 
     return (
         <div className="sign-in">
@@ -30,13 +31,6 @@ const SignIn = () => {
                 <div className="buttons">
                     <Button type="submit" onClick={() => signin(email, password)} >Sign In</Button>
                     <Button className='google-sign-in'  onClick={() => googleSignin()} >Sign In With GOOGLE</Button>
-                    <button onClick={async () => {
-                        await setDoc(doc(firestore, 'users', 'khgjgjg' ), {
-                            name: 'New Added',
-                            lastName: 'topas',
-                            age: 26
-                        })
-                    }}>fetch</button>
                 </div>
             </form>
         </div>
